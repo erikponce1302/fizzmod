@@ -4,14 +4,23 @@
  * 3) Crear una función que reemplace de manera provisoria la funcionalidad obtenia por el método map() del prototipo de Array que pueda pasar los siguientes tests :
 */
 
+
 let numeros = [1,2,3,4]
+
+function mapCustomizado(numeros){
+    for (var i ; i < length(numeros); i++){
+        return numeros[i] = numeros[i] + 1 
+    }
+}
+
 //mapCustomizado => representa la funcion que ustedes tendrían que crear
 mapCustomizado(numeros,numero=>numero+1) //[2,3,4,5]
 mapCustomizado(numeros,(numero,indice)=>numero+indice) //[1,3,5,7]
 mapCustomizado(numeros,numero=>{}) //[undefined,undefined,undefined,undefined]
 
 /**
- * 4) Modificar el prototipo de la funcion constructora Array para que admita como nuevo método la funcion customizada del paso anterior para que cumpla los siguientes tests :
+ * 4) Modificar el prototipo de la funcion constructora Array para que admita como nuevo método 
+ * la funcion customizada del paso anterior para que cumpla los siguientes tests :
  */
 numeros.mapCustomizado(numero=>numero+1) //[2,3,4,5]
 numeros.mapCustomizado((numero,indice)=>numero+indice) //[1,3,5,7]
@@ -20,10 +29,24 @@ numeros.hasOwnProperty("mapCustomizado") //false
 "mapCustomizado" in numeros //true
 
 /**
- * 5) Los miembros de trabajo especificados en el siguiente objeto usan su nombre como indice y su edad como valor. Separa los miembros mayores de 40 años y menores de 25 años en un array y todo el resto en un segundo array. Ambos arrays tienen que estar compuestos únicamente por los nombres de las personas. Por último cada array tiene que estar ordenado alfabeticamente.
+ * 5) Los miembros de trabajo especificados en el siguiente objeto usan su nombre como indice y su edad como valor. 
+ * Separa los miembros mayores de 40 años y menores de 25 años en un array y todo el resto en un segundo array. 
+ * Ambos arrays tienen que estar compuestos únicamente por los nombres de las personas. 
+ * Por último cada array tiene que estar ordenado alfabeticamente.
  */
 
 let miembros = { pedro : 35 , ana : 18 , carlos : 43 , juan : 21 , maria : 29 , angela : 31 , jose : 23 , mariana : 41 , eugenio : 19 }
+
+for (const prop in miembros) {
+    let nombre = prop;//nombre
+    let edad = miembros[prop];//edad
+    
+    if(edad < 25 && edad > 40){
+
+    }else {
+
+    }
+}
 
 /**
  * 4) Crear un fork de este repositorio en sus propias cuentas
