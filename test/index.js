@@ -7,11 +7,14 @@
 
 let numeros = [1,2,3,4]
 
-function mapCustomizado(numeros){
-    for (var i ; i < length(numeros); i++){
-        return numeros[i] = numeros[i] + 1 
-    }
+function mapCustomizado(numeros, fn){
+    var arrayEnd = [];
+    for (var i = 0; i < numeros.length; i++) {
+    arrayEnd.push(fn(numeros[i], i));
+  }
+  return arrayEnd;
 }
+
 
 //mapCustomizado => representa la funcion que ustedes tendrían que crear
 mapCustomizado(numeros,numero=>numero+1) //[2,3,4,5]
@@ -36,17 +39,23 @@ numeros.hasOwnProperty("mapCustomizado") //false
  */
 
 let miembros = { pedro : 35 , ana : 18 , carlos : 43 , juan : 21 , maria : 29 , angela : 31 , jose : 23 , mariana : 41 , eugenio : 19 }
+arr = []
+arr1 = []
 
-for (const prop in miembros) {
-    let nombre = prop;//nombre
-    let edad = miembros[prop];//edad
+for (prop in miembros) {
+    nombre = prop;//nombre
+    edad = miembros[prop];//edad
     
-    if(edad < 25 && edad > 40){
-
+  
+    if( edad < 25 || edad > 40 ){
+      arr.push(nombre)
     }else {
-
+      arr1.push(nombre)
     }
 }
+
+console.log(arr.sort())
+console.log(arr1.sort())
 
 /**
  * 4) Crear un fork de este repositorio en sus propias cuentas
@@ -67,6 +76,62 @@ for (const prop in miembros) {
     console.log(res) // [2,3]
 })()
 
+(function(){
+    "use strict"
+
+    let x = 1,
+    arr = []
+    let y = 2
+    arr.push(x,y)
+    let res = arr.forEach((n, indice)=>{
+        console.log(`El numero en el indice ${indice} es : ${n}`);
+        res + 1
+    })
+    //tengo q llamar a la funcion que cree arriba para sumar uno a cada elemento del array y guardarlo en la variable rest
+    console.log(res) // [2,3]
+})()
+
 /**
- * 7) Crear un modulo .js que contenga una variable llamada base cuyo valor es el número 2 y tres funciones, las cual va a exportar cada vez que se requiera el archivo llamadas multiplicar , cambiarBase y consultarBase. La función multiplicar toma un valor como input de tipo Number o String y lo multiplica por el valor de la variable base. La función cambiarBase modifica el valor de la variable base el cual se mantiene para las próximas ejecuciones y consultarBase retorna el valor actual de la variable base
+ * 7) Crear un modulo .js que contenga una variable llamada base cuyo valor es el número 2 y 
+ tres funciones, las cual va a exportar cada vez que se requiera el archivo llamadas multiplicar , 
+ cambiarBase y consultarBase. 
+ La función multiplicar toma un valor como input de tipo Number o String y 
+ lo multiplica por el valor de la variable base. 
+ La función cambiarBase modifica el valor de la variable base el 
+ cual se mantiene para las próximas ejecuciones y consultarBase retorna el valor actual de la variable base
  */
+
+ export class Math {
+
+    constructor()
+    {
+        let base = 2;
+
+        this.multiplicar = function(x){
+            return parseInt(x) * base;
+        }
+
+        this.cambiarBase = function(x){
+            base = x;
+        }
+
+        this.consultarBase = function(){
+            return base;
+        }
+    }
+
+    multiplicar(number)
+    {
+        return this.multiplicar(number);
+    }
+
+    cambiarBase(base)
+    {
+        return this.cambiarBase(base);
+    }
+
+    consultarBase()
+    {
+        return this.consultarBase();
+    }
+}
