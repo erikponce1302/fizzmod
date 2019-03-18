@@ -1,0 +1,23 @@
+{
+  "name": "fizzmod",
+  "version": "1.0.0",
+  "description": "<p align=\"center\"><img src=\"https://i.imgur.com/rLMxMbQ.png\"/></p> <p align=\"center\"><img src=\"https://www.educacionit.com/images/logo-educacionit.png\"/></p>",
+  "main": "server.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/erikponce1302/fizzmod.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/erikponce1302/fizzmod/issues"
+  },
+  "homepage": "https://github.com/erikponce1302/fizzmod#readme"
+}
