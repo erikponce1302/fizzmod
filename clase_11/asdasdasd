@@ -1,0 +1,12 @@
+href="{'app_url': u'/admin/productos/', 
+'models': [{'perms': {u'add': True, u'change': True, u'delete': True}, 
+'add_url': u'/admin/productos/categoriaproducto/add/', 
+'admin_url': u'/admin/productos/categoriaproducto/', 
+'object_name': 'CategoriaProducto', 
+'name': u'Categor\xedas de Productos'}, {
+    'perms': {u'add': True, u'change': True, u'delete': True}, 
+    'add_url': u'/admin/productos/producto/add/', 
+    'admin_url': u'/admin/productos/producto/', 
+    'object_name': 'Producto', 'name': u'Productos'}], 
+    'has_module_perms': True, 'name': u'Productos', 
+    'app_label': u'productos'}"
