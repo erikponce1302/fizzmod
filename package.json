@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/erikponce1302/fizzmod/issues"
   },
-  "homepage": "https://github.com/erikponce1302/fizzmod#readme"
+  "homepage": "https://github.com/erikponce1302/fizzmod#readme",
+  "dependencies": {
+    "mysql": "^2.16.0"
+  }
 }

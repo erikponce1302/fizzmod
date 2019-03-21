@@ -12,6 +12,7 @@ const con = mysql.createConnection({
 })
 
 const server = http.createServer((req,res) =>{
+
     con.query("select * from alumnos", (err, resp, fields)=>{
         if(err){
             res.writeHead(400, {"content-type":"text-plain"})
@@ -20,6 +21,7 @@ const server = http.createServer((req,res) =>{
         console.table(res)
     })
     res.end("hola mundo")
+    
 })
 
 con.connect(err =>{
